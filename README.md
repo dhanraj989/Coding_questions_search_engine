@@ -1,4 +1,4 @@
-# leetcode_question_searcher
+# Coding Questions Search Engine
 • I have created a search engine which gives leetcode questions based on word searched, this search engine works on tf-idf algorithm.  
 • Deployed website using render website, here is the link to the search engine https://query-searcher.onrender.com/.  
 • First, scrapped all question links from leetcode websites using selenium and chrome webdriver,then removed the links which are repeated.  
