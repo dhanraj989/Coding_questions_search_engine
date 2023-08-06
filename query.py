@@ -81,17 +81,17 @@ def calculate_sorted_order_of_documents(query_terms):
             else:
                 potential_documents[document] += tf_values_by_document[document] * idf_value
 
-    #print(potential_documents)
-    # divite by the length of the query terms
-    for document in potential_documents:
-        potential_documents[document] /= len(query_terms)
-
-    potential_documents = dict(sorted(potential_documents.items(), key=lambda item: item[1], reverse=True))
-    ans = []
-    for document_index in potential_documents:
-        #print('Document: ', documents[int(document_index)], ' Score: ', potential_documents[document_index])
-        ans.append({"Question Link": Qlink[int(
-                document_index) - 1][:-2],"Score":potential_documents[document_index]})
+        #print(potential_documents)
+        # divite by the length of the query terms
+        for document in potential_documents:
+            potential_documents[document] /= len(query_terms)
+    
+        potential_documents = dict(sorted(potential_documents.items(), key=lambda item: item[1], reverse=True))
+        ans = []
+        for document_index in potential_documents:
+            #print('Document: ', documents[int(document_index)], ' Score: ', potential_documents[document_index])
+            ans.append({"Question Link": Qlink[int(
+                    document_index) - 1][:-2],"Score":potential_documents[document_index]})
     return ans
 
 
