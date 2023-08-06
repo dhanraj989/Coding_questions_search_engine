@@ -78,7 +78,8 @@ def calculate_sorted_order_of_documents(query_terms):
         for document in tf_values_by_document:
             if document not in potential_documents:
                 potential_documents[document] = tf_values_by_document[document] * idf_value
-            potential_documents[document] += tf_values_by_document[document] * idf_value
+            else:
+                potential_documents[document] += tf_values_by_document[document] * idf_value
 
     #print(potential_documents)
     # divite by the length of the query terms
