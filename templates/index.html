@@ -8,7 +8,9 @@
         // Create a new button element
         var btn = document.createElement("button");
         btn.innerHTML = "New Button";
-
+        btn.onclick = function() {
+          alert('This website is used to get coding question links');
+        };
         // Append the button to the form
         var formDiv = document.querySelector(".form");
         formDiv.appendChild(btn);
